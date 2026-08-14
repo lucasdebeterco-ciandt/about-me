@@ -1063,7 +1063,7 @@
                 <a href="#certificados" class="nav-link">Certificados</a>
             </nav>
 
-            <a href="mailto:lucas.debeterco@cit.com" class="btn btn-cit"
+            <a href="mailto:lucaswr@ciandt.com" class="btn btn-cit"
                 style="padding: 0.5rem 1.1rem; font-size: 0.85rem;">Fale Comigo</a>
         </div>
     </header>
@@ -1082,7 +1082,7 @@
 
                     <p class="hero-subtitle">
                         Engenheiro de Software Sênior Javascript na CI&T. Experiência consolidada no desenvolvimento de
-                        aplicações escaláveis em Next.js, React e Nest (Node).
+                        aplicações escaláveis.
                     </p>
 
                     <div class="hero-ctas">
@@ -1184,6 +1184,10 @@
                     <ul class="exp-bullets">
                         <li>Atuação como Desenvolvedor Sênior e liderança da arquitetura de projetos utilizando Next.js
                             e React.js.</li>
+                        <li>
+                            Utilização prática diária de Claude AI, agentes e ferramentas de GenAI para aceleração de
+                            código, arquitetura e produtividade.
+                        </li>
                         <li>Aplicação rigorosa de melhores práticas de arquitetura front-end para estabilidade e
                             escalabilidade.</li>
                         <li>Implementação do zero de autenticação SSO (Single Sign-On) com suporte a múltiplos
@@ -1221,6 +1225,10 @@
                     <ul class="exp-bullets">
                         <li>Contribuição em sistemas de e-commerce atendendo milhões de usuários (consumidores e
                             lojistas).</li>
+                        <li>
+                            Construção de APIs e aplicações utilizando NestJS, Node.js, TypeScript e bancos de dados
+                            PostgreSQL.
+                        </li>
                         <li>Construção e arquitetura de projetos do zero utilizando Next.js, React.js, Nest, Node e
                             TypeScript.</li>
                         <li>Decomposição de arquitetura monolítica para micro-frontends ágeis e modulares.</li>
@@ -1560,7 +1568,9 @@
                         </div>
                         <div class="topic-item">
                             <span class="topic-bullet">•</span>
-                            <div><strong>Demais itens como:</strong> Autenticação SSO (Single Sign-On com múltiplos provedores), Design Systems (Storybook), SEO, Automação de Testes (Playwright, Cypress, Jest, Vitest), Micro-frontends e Migração de Monolitos e muito mais.</div>
+                            <div><strong>Demais itens como:</strong> Autenticação SSO (Single Sign-On com múltiplos
+                                provedores), Design Systems (Storybook), SEO, Automação de Testes (Playwright, Cypress,
+                                Jest, Vitest), Micro-frontends e Migração de Monolitos e muito mais.</div>
                         </div>
                     </div>
                 </div>
@@ -1615,21 +1625,30 @@
                 <p class="section-desc">Acompanhamento dos cursos concluídos na CI&T e capacitações pessoais.</p>
             </div>
 
-            <!-- Tabs de Navegação de Cursos -->
+            <!-- Tabs de Navegação e Filtros de Cursos -->
             <div class="course-tabs-nav">
-                <button class="course-tab-btn active" onclick="switchCourseTab('cit')">🏢 Cursos CI&amp;T</button>
-                <button class="course-tab-btn" onclick="switchCourseTab('pessoais')">🎓 Cursos Pessoais</button>
+                <button class="course-tab-btn active" onclick="switchCourseTab(event, 'all')">🌟 Todos os Cursos (28)</button>
+                <button class="course-tab-btn" onclick="switchCourseTab(event, 'cit')">🏢 Cursos CI&amp;T (12)</button>
+                <button class="course-tab-btn" onclick="switchCourseTab(event, 'pessoais')">🎓 Cursos Pessoais (16)</button>
             </div>
 
-            <!-- Conteúdo da Tab CI&T -->
-            <div class="course-tab-content active" id="tab-cit-courses">
+            <!-- Conteúdo de Cursos CI&T -->
+            <div class="course-tab-content active" id="tab-cit-courses" style="margin-bottom: 3rem;">
+                <h3 style="font-size: 1.15rem; color: var(--text-heading); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
+                    <span>🏢 Cursos &amp; Capacitações CI&amp;T</span>
+                    <span style="font-size: 0.78rem; font-weight: 700; background: var(--cit-red-light); color: var(--cit-red); padding: 0.2rem 0.65rem; border-radius: var(--radius-full);">12 Cursos</span>
+                </h3>
                 <div id="cit-courses-list" class="cert-grid">
                     <!-- Preenchido dinamicamente via courses.js -->
                 </div>
             </div>
 
-            <!-- Conteúdo da Tab Pessoais -->
-            <div class="course-tab-content" id="tab-personal-courses">
+            <!-- Conteúdo de Cursos Pessoais -->
+            <div class="course-tab-content active" id="tab-personal-courses">
+                <h3 style="font-size: 1.15rem; color: var(--text-heading); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
+                    <span>🎓 Cursos Pessoais &amp; Certificações Independentes</span>
+                    <span style="font-size: 0.78rem; font-weight: 700; background: var(--cit-teal-light); color: var(--cit-teal-dark); padding: 0.2rem 0.65rem; border-radius: var(--radius-full);">16 Cursos</span>
+                </h3>
                 <div id="personal-courses-list" class="cert-grid">
                     <!-- Preenchido dinamicamente via courses.js -->
                 </div>
@@ -1652,7 +1671,7 @@
                 </div>
 
                 <div style="display: flex; gap: 1rem;">
-                    <a href="mailto:lucas.debeterco@cit.com" class="btn btn-cit">Contatar via E-mail</a>
+                    <a href="mailto:lucaswr@ciandt.com" class="btn btn-cit">Contatar via E-mail</a>
                 </div>
             </div>
 
@@ -1665,18 +1684,28 @@
     <!-- COURSES DATA AND INTERACTIVE SCRIPT -->
     <script src="courses.js"></script>
     <script>
-        // Tab Handler para a seção de Cursos (CI&T vs Pessoais)
-        function switchCourseTab(tabName) {
+        // Tab Handler robusto para filtragem de cursos
+        function switchCourseTab(evt, filterType) {
             const buttons = document.querySelectorAll('.course-tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
 
-            const contents = document.querySelectorAll('.course-tab-content');
-            contents.forEach(content => content.classList.remove('active'));
+            const targetBtn = evt ? (evt.currentTarget || evt.target) : null;
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
 
-            const selectedContent = document.getElementById(`tab-${tabName}-courses`);
-            if (selectedContent) {
-                selectedContent.classList.add('active');
+            const citTab = document.getElementById('tab-cit-courses');
+            const personalTab = document.getElementById('tab-personal-courses');
+
+            if (filterType === 'all') {
+                if (citTab) citTab.style.display = 'block';
+                if (personalTab) personalTab.style.display = 'block';
+            } else if (filterType === 'cit') {
+                if (citTab) citTab.style.display = 'block';
+                if (personalTab) personalTab.style.display = 'none';
+            } else if (filterType === 'pessoais') {
+                if (citTab) citTab.style.display = 'none';
+                if (personalTab) personalTab.style.display = 'block';
             }
         }
 
@@ -1691,10 +1720,8 @@
                         <div>
                             <div class="course-card-header">
                                 <span class="cert-tag">${course.category}</span>
-                                <span class="course-status-tag">✓ ${course.statusText}</span>
                             </div>
                             <h3 class="cert-name">${course.title}</h3>
-                            <div class="cert-code">Código: <code>${course.code}</code></div>
                         </div>
                         <div class="course-card-footer">
                             <span class="course-platform">${course.platform}</span>
@@ -1723,15 +1750,15 @@
                             <div>
                                 <div class="course-card-header">
                                     <span class="cert-tag">${course.category}</span>
-                                    <span class="course-status-tag">✓ ${course.statusText}</span>
+                                    ${course.issued ? `<span class="course-status-tag" style="background: var(--cit-teal-light); color: var(--cit-teal-dark);">🗓️ ${course.issued}</span>` : ''}
                                 </div>
                                 <h3 class="cert-name">${course.title}</h3>
-                                <div class="cert-code">Código: <code>${course.code}</code></div>
+                                ${course.credentialCode ? `<div class="cert-code">Credencial: <code>${course.credentialCode}</code></div>` : ''}
                             </div>
                             <div class="course-card-footer">
                                 <span class="course-platform">${course.platform}</span>
                                 <a href="${course.url}" target="_blank" rel="noopener noreferrer" class="course-btn">
-                                    Ver Detalhes &rarr;
+                                    Exibir Credencial &rarr;
                                 </a>
                             </div>
                         </div>
