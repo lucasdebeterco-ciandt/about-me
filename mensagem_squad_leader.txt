@@ -1,19 +1,19 @@
-Olá, Squad Leader! Tudo bem?
-
-Para facilitar nosso alinhamento e apresentação profissional, criei um site interativo com meu perfil completo, mas também trago aqui esta mensagem em texto com todas as informações detalhadas sobre minha trajetória, competências e resultados.
+Texto de Apresentação
 
 ==================================================
 1. APRESENTAÇÃO
 ==================================================
+
+Importante: Essa apresentação também está disponível no formato de uma página web no seguinte link:
+https://lucasdebeterco-ciandt.github.io/about-me/
 
 Lucas Wamser Rosa Debeterco
 Senior Software Engineer @ CI&T
 
 Engenheiro de Software Sênior Javascript na CI&T. Experiência consolidada no desenvolvimento de aplicações escaláveis.
 
-• Experiência em Dev: +7 Anos
+• Experiência em Dev: +8 Anos
 • Média Journey CI&T: 3.3 / 4.0
-• Último Cliente Atendido: Prudential
 • Especialidade: Ecossistema JavaScript
 
 Links:
@@ -38,8 +38,6 @@ Local: 📍 Remoto • Brasil
 • Desenvolvimento e manutenção de automação de testes completos com Playwright e Jest.
 • Colaboração direta com equipes multidisciplinares para definição e integração contínua de novas funcionalidades.
 • Condução diária de code reviews, pair programming e orientação técnica constante para os desenvolvedores do time.
-Tecnologias: Next.js, React.js, TypeScript, SSO Auth, Playwright, Jest, Front-end Architecture
-
 
 ■ Software Engineer — Magazord Commerce
 Período: 2018 - 2025
@@ -55,8 +53,6 @@ Local: 📍 Rio do Sul, SC, Brasil • Híbrido
 • Domínio de conceitos de renderização web moderna (SSR, SPA e SSG) e otimização SEO.
 • Desenvolvimento de Design System corporativo utilizando Storybook.
 • Automação de testes com Cypress e Vitest, metodologia Scrum e Git Flow.
-Tecnologias: React.js, Next.js, Nest.js, Node, TypeScript, Micro-frontends, Storybook, AWS Amplify, Cypress, Vitest
-
 
 ==================================================
 3. TECNOLOGIAS DOMINADAS
@@ -104,7 +100,6 @@ Tecnologias: React.js, Next.js, Nest.js, Node, TypeScript, Micro-frontends, Stor
 • Git Flow
 • Jira / Agile
 
-
 ==================================================
 4. RESUMO DOS RESULTADOS NO PROCESSO JOURNEY (CI&T)
 ==================================================
@@ -123,7 +118,7 @@ Histórico do Ciclo Dezembro 2025 (26/12/2025 a 02/02/2026):
 • Liderança: Destacou o sólido conhecimento técnico, senso de urgência, comunicação transparente e apoio fundamental na rápida resolução de problemas na fase de crise do projeto Prudential.
 • Peers & Guests: Elogiaram a visão diferenciada de arquitetura e decisões técnicas, excelente atitude em co-liderança técnica Front-end, resolução ágil de bugs críticos, forte disposição para mentoria/pair programming e comprometimento elevado com entregas.
 
-* O detalhamento completo de todas as notas por avaliador e as transcrições na íntegra de cada comentário da liderança e dos pares podem ser consultados diretamente no site.
+O detalhamento completo de todas as notas por avaliador e as transcrições na íntegra de cada comentário da liderança e dos pares podem ser consultados diretamente no site (https://lucasdebeterco-ciandt.github.io/about-me/).
 
 
 ==================================================
@@ -150,4 +145,4 @@ Histórico do Ciclo Dezembro 2025 (26/12/2025 a 02/02/2026):
 6. CURSOS & CERTIFICAÇÕES
 ==================================================
 
-A lista completa contendo todos os cursos concluídos com detalhamento de plataformas e credenciais está disponível diretamente na página web interativa.
+A lista completa contendo todos os cursos concluídos com detalhamento de plataformas e credenciais está disponível diretamente na página web interativa (https://lucasdebeterco-ciandt.github.io/about-me/).
