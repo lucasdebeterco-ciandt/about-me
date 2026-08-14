@@ -1,0 +1,153 @@
+Olá, Squad Leader! Tudo bem?
+
+Para facilitar nosso alinhamento e apresentação profissional, criei um site interativo com meu perfil completo, mas também trago aqui esta mensagem em texto com todas as informações detalhadas sobre minha trajetória, competências e resultados.
+
+==================================================
+1. APRESENTAÇÃO
+==================================================
+
+Lucas Wamser Rosa Debeterco
+Senior Software Engineer @ CI&T
+
+Engenheiro de Software Sênior Javascript na CI&T. Experiência consolidada no desenvolvimento de aplicações escaláveis.
+
+• Experiência em Dev: +7 Anos
+• Média Journey CI&T: 3.3 / 4.0
+• Último Cliente Atendido: Prudential
+• Especialidade: Ecossistema JavaScript
+
+Links:
+• LinkedIn: https://www.linkedin.com/in/lucas-wamser-rosa-debeterco/
+• GitHub: https://github.com/lucasdebeterco
+• Portfólio Web: https://lucasdebeterco.dev/
+• E-mail: lucaswr@ciandt.com
+
+
+==================================================
+2. EXPERIÊNCIAS PROFISSIONAIS
+==================================================
+
+■ Senior Software Engineer — CI&T • Projeto Cliente Prudential
+Período: 2025 - Presente
+Local: 📍 Remoto • Brasil
+
+• Atuação como Desenvolvedor Sênior e liderança da arquitetura de projetos utilizando Next.js e React.js.
+• Utilização prática diária de Claude AI, agentes e ferramentas de GenAI para aceleração de código, arquitetura e produtividade.
+• Aplicação rigorosa de melhores práticas de arquitetura front-end para estabilidade e escalabilidade.
+• Implementação do zero de autenticação SSO (Single Sign-On) com suporte a múltiplos provedores de identidade.
+• Desenvolvimento e manutenção de automação de testes completos com Playwright e Jest.
+• Colaboração direta com equipes multidisciplinares para definição e integração contínua de novas funcionalidades.
+• Condução diária de code reviews, pair programming e orientação técnica constante para os desenvolvedores do time.
+Tecnologias: Next.js, React.js, TypeScript, SSO Auth, Playwright, Jest, Front-end Architecture
+
+
+■ Software Engineer — Magazord Commerce
+Período: 2018 - 2025
+Local: 📍 Rio do Sul, SC, Brasil • Híbrido
+
+• Contribuição em sistemas de e-commerce atendendo milhões de usuários (consumidores e lojistas).
+• Construção de APIs e aplicações utilizando NestJS, Node.js, TypeScript e bancos de dados PostgreSQL.
+• Construção e arquitetura de projetos do zero utilizando Next.js, React.js, Nest, Node e TypeScript.
+• Decomposição de arquitetura monolítica para micro-frontends ágeis e modulares.
+• Esteiras de CI/CD utilizando AWS Amplify.
+• Apoio contínuo com pair programming, code reviews e mentoria a novos desenvolvedores do time.
+• Colaboração ativa com equipes de QA e Back-end para criação de APIs do zero.
+• Domínio de conceitos de renderização web moderna (SSR, SPA e SSG) e otimização SEO.
+• Desenvolvimento de Design System corporativo utilizando Storybook.
+• Automação de testes com Cypress e Vitest, metodologia Scrum e Git Flow.
+Tecnologias: React.js, Next.js, Nest.js, Node, TypeScript, Micro-frontends, Storybook, AWS Amplify, Cypress, Vitest
+
+
+==================================================
+3. TECNOLOGIAS DOMINADAS
+==================================================
+
+🤖 AI:
+• Claude
+• BMAD
+• Agentic Engineering
+• GenAI Tools
+• LLM Integration
+• CI&T /FLOW
+
+💻 Front-end:
+• React.js
+• Next.js
+• TypeScript
+• Zustand
+• Context API
+• Redux
+• Tailwind CSS
+• Styled-components
+• SASS / CSS3
+• Vite
+• JQuery
+• Twig Template
+
+⚙️ Back-end & Banco de Dados:
+• Node.js
+• Nest.js
+• Express.js
+• Prisma ORM
+• API RESTful
+• SQL
+• PostgreSQL
+
+🛠️ Testes, Cloud & Ferramentas:
+• Playwright
+• Cypress
+• Vitest
+• Jest
+• ESLint
+• AWS
+• GitHub Actions
+• Git Flow
+• Jira / Agile
+
+
+==================================================
+4. RESUMO DOS RESULTADOS NO PROCESSO JOURNEY (CI&T)
+==================================================
+
+Histórico do Ciclo Dezembro 2025 (26/12/2025 a 02/02/2026):
+
+[ Médias Finais das Avaliações por Pilar ]
+• ESG: 3.0
+• People: 3.1
+• Client: 3.1
+• Growth: 3.1
+• Operational Model: 3.3
+• Média Geral Journey CI&T: 3.3 / 4.0
+
+[ Resumo dos Feedbacks do Time & Liderança ]
+• Liderança: Destacou o sólido conhecimento técnico, senso de urgência, comunicação transparente e apoio fundamental na rápida resolução de problemas na fase de crise do projeto Prudential.
+• Peers & Guests: Elogiaram a visão diferenciada de arquitetura e decisões técnicas, excelente atitude em co-liderança técnica Front-end, resolução ágil de bugs críticos, forte disposição para mentoria/pair programming e comprometimento elevado com entregas.
+
+* O detalhamento completo de todas as notas por avaliador e as transcrições na íntegra de cada comentário da liderança e dos pares podem ser consultados diretamente no site.
+
+
+==================================================
+5. HARD SKILLS & SOFT SKILLS
+==================================================
+
+💻 Hard Skills:
+• Inteligência Artificial & Claude AI (Uso Diário): Utilização prática diária de Claude AI, agentes e ferramentas de GenAI para aceleração de código, arquitetura e produtividade.
+• Arquitetura Front-end Avançada: Estruturação de projetos em Next.js e React com padronização e escalabilidade.
+• Desenvolvimento Back-end & Banco de Dados: Construção de APIs e aplicações utilizando NestJS, Node.js, TypeScript e bancos de dados PostgreSQL.
+• Resolução de Bugs Críticos: Agilidade e precisão no diagnóstico e correção de problemas complexos.
+• Demais itens como: Autenticação SSO (Single Sign-On com múltiplos provedores), Design Systems (Storybook), SEO, Automação de Testes (Playwright, Cypress, Jest, Vitest), Micro-frontends e Migração de Monolitos e muito mais.
+
+🧠 Soft Skills:
+• Resiliência e Senso de Urgência: Alta performance e foco sob pressão em momentos de crise do projeto.
+• Liderança Técnica Co-ativa: Capacidade de orientar o time, direcionar decisões de arquitetura e apoiar lideranças.
+• Mentoria e Pair Programming: Solícito e paciente na orientação de desenvolvedores e onboarding de novos membros.
+• Comunicação Transparente: Clareza no alinhamento de escopo, impedimentos e entregas com o time.
+• Comprometimento Elevado: Dedicação além das expectativas para assegurar a conclusão de entregas críticas.
+• Visão de Escopo & Solução de Problemas: Capacidade de entender o contexto do cliente e propor alternativas eficientes.
+
+
+==================================================
+6. CURSOS & CERTIFICAÇÕES
+==================================================
+
+A lista completa contendo todos os cursos concluídos com detalhamento de plataformas e credenciais está disponível diretamente na página web interativa.
