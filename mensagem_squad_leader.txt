@@ -45,7 +45,7 @@ Local: 📍 Rio do Sul, SC, Brasil • Híbrido
 
 • Contribuição em sistemas de e-commerce atendendo milhões de usuários (consumidores e lojistas).
 • Construção de APIs e aplicações utilizando NestJS, Node.js, TypeScript e bancos de dados PostgreSQL.
-• Construção e arquitetura de projetos do zero utilizando Next.js, React.js, Nest, Node e TypeScript.
+• Construção e arquitetura de projetos do zero utilizando Next.js, React.js e TypeScript.
 • Decomposição de arquitetura monolítica para micro-frontends ágeis e modulares.
 • Esteiras de CI/CD utilizando AWS Amplify.
 • Apoio contínuo com pair programming, code reviews e mentoria a novos desenvolvedores do time.
