@@ -1042,6 +1042,34 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #0F172A;
+            color: #ffffff;
+            padding: 0.85rem 1.4rem;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            border-left: 4px solid var(--cit-red);
+        }
+
+        .toast-notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -1066,7 +1094,7 @@
                 <a href="#certificados" class="nav-link">Certificados</a>
             </nav>
 
-            <a href="mailto:lucaswr@ciandt.com" class="btn btn-cit"
+            <a href="mailto:lucaswr@ciandt.com" onclick="handleEmailClick(event, 'lucaswr@ciandt.com')" class="btn btn-cit"
                 style="padding: 0.5rem 1.1rem; font-size: 0.85rem;">Fale Comigo</a>
         </div>
     </header>
@@ -1679,7 +1707,7 @@
                 </div>
 
                 <div style="display: flex; gap: 1rem;">
-                    <a href="mailto:lucaswr@ciandt.com" class="btn btn-cit">Contatar via E-mail</a>
+                    <a href="mailto:lucaswr@ciandt.com" onclick="handleEmailClick(event, 'lucaswr@ciandt.com')" class="btn btn-cit">Contatar via E-mail</a>
                 </div>
             </div>
 
@@ -1772,6 +1800,34 @@
                         </div>
                     `).join('');
                 }
+            }
+        }
+
+        function showToast(message) {
+            let toast = document.getElementById('toast-notification');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'toast-notification';
+                toast.className = 'toast-notification';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = `<span>📧</span> <span>${message}</span>`;
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        function handleEmailClick(event, email) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(() => {
+                    showToast(`E-mail (${email}) copiado para a área de transferência!`);
+                }).catch(() => {
+                    showToast(`E-mail: ${email}`);
+                });
+            } else {
+                showToast(`E-mail: ${email}`);
             }
         }
 
