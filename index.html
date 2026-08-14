@@ -1,5 +1,1749 @@
-<html>
-    <body>
-        <h1>Welcome to My Website</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Debeterco | Senior Software Engineer</title>
+    <meta name="description"
+        content="Portfólio profissional de Lucas Debeterco, Senior Software Engineer na CI&T. Especialista em Front-end, Next.js, React, Autenticação SSO e Arquitetura de Software.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           CSS DESIGN SYSTEM & PALETA CI&T (LIGHT)
+           ========================================== */
+        :root {
+            /* Cores de Marca CI&T */
+            --cit-red: #E20D34;
+            --cit-red-dark: #C1082A;
+            --cit-red-light: rgba(226, 13, 52, 0.08);
+
+            --cit-teal: #00B4C5;
+            --cit-teal-dark: #0093A2;
+            --cit-teal-light: rgba(0, 180, 197, 0.1);
+
+            /* Tema Claro */
+            --bg-main: #F8FAFC;
+            --bg-surface: #FFFFFF;
+            --bg-subtle: #F1F5F9;
+
+            --border-color: #E2E8F0;
+            --border-hover: #CBD5E1;
+
+            --text-heading: #0F172A;
+            --text-body: #334155;
+            --text-muted: #64748B;
+            --text-light: #94A3B8;
+
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-code: 'Fira Code', monospace;
+
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+            --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+            --shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset Base */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: var(--font-main);
+            color: var(--text-heading);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            background: var(--cit-red-light);
+            color: var(--cit-red);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+            color: var(--text-heading);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-cit {
+            background-color: var(--cit-red);
+            color: #ffffff;
+        }
+
+        .btn-cit:hover {
+            background-color: var(--cit-red-dark);
+            box-shadow: 0 4px 12px rgba(226, 13, 52, 0.25);
+        }
+
+        .btn-outline {
+            background-color: var(--bg-surface);
+            color: var(--text-heading);
+            border-color: var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-subtle);
+            border-color: var(--border-hover);
+        }
+
+        /* ==========================================
+           HEADER / NAVBAR
+           ========================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-main);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--text-heading);
+        }
+
+        .brand-badge {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+
+        .brand-badge .red {
+            color: var(--cit-red);
+        }
+
+        .brand-badge .teal {
+            color: var(--cit-teal);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--cit-red);
+        }
+
+        /* ==========================================
+           HERO SECTION (RESUMO SOBRE MIM)
+           ========================================== */
+        .hero {
+            padding: 8.5rem 0 4rem 0;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .hero-company-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--cit-red);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-title {
+            font-size: 2.75rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            color: var(--text-heading);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            margin-bottom: 1.75rem;
+            line-height: 1.65;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stats-summary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat-box {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: var(--font-main);
+            color: var(--cit-red);
+            line-height: 1.2;
+        }
+
+        .stat-text {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+
+        /* Hero Side Card */
+        .hero-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+        }
+
+        .profile-avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--cit-red);
+            box-shadow: 0 4px 14px rgba(226, 13, 52, 0.25);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .profile-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.55rem 0.9rem;
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            color: var(--text-heading);
+            width: 100%;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .social-btn.linkedin:hover {
+            background: #0A66C2;
+            color: #ffffff;
+            border-color: #0A66C2;
+        }
+
+        .social-btn.github:hover {
+            background: #24292F;
+            color: #ffffff;
+            border-color: #24292F;
+        }
+
+        .social-btn.portfolio:hover {
+            background: var(--cit-teal-dark);
+            color: #ffffff;
+            border-color: var(--cit-teal-dark);
+        }
+
+        .profile-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .profile-subtitle {
+            font-size: 0.88rem;
+            color: var(--cit-teal-dark);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .profile-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-body);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .profile-info-item {
+            display: flex;
+            justify-content: space-between;
+            text-align: right;
+        }
+
+        .profile-info-item span:first-child {
+            color: var(--text-muted);
+        }
+
+        .profile-info-item span:last-child {
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           EXPERIENCE SECTION (EXPERIÊNCIAS)
+           ========================================== */
+        .experience-section {
+            padding: 5rem 0;
+        }
+
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .exp-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+        }
+
+        .exp-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-card);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .exp-role {
+            font-size: 1.35rem;
+            color: var(--text-heading);
+        }
+
+        .exp-company {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--cit-red);
+            margin-top: 0.2rem;
+        }
+
+        .exp-period {
+            background: var(--bg-subtle);
+            color: var(--text-heading);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-color);
+        }
+
+        .exp-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .exp-bullets {
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-bullets li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            color: var(--text-body);
+        }
+
+        .exp-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--cit-red);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .exp-tag {
+            background: var(--bg-subtle);
+            color: var(--text-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-code);
+        }
+
+        /* ==========================================
+           TECHNOLOGIES SECTION (TECNOLOGIAS)
+           ========================================== */
+        .tech-section {
+            padding: 5rem 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tech-categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .tech-cat-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+        }
+
+        .tech-cat-title {
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-heading);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tech-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-badge {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-heading);
+            padding: 0.4rem 0.85rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           JOURNEY EVALUATIONS SECTION
+           ========================================== */
+        .journey-section {
+            padding: 5rem 0;
+        }
+
+        .journey-score-table-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .journey-table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cycle-tag {
+            background: var(--cit-teal-light);
+            color: var(--cit-teal-dark);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+        }
+
+        /* Score Table */
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .score-table th,
+        .score-table td {
+            padding: 0.75rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .score-table th {
+            background: var(--bg-subtle);
+            color: var(--text-heading);
+            font-weight: 700;
+            font-family: var(--font-main);
+        }
+
+        .score-table td:first-child,
+        .score-table th:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-highlight {
+            font-weight: 800;
+            color: var(--cit-red);
+        }
+
+        /* Peer Tabs & Feedback */
+        .peer-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .peer-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.6rem 1.1rem;
+            border-radius: var(--radius-md);
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .peer-btn.active,
+        .peer-btn:hover {
+            background: var(--cit-red-light);
+            border-color: var(--cit-red);
+            color: var(--cit-red);
+        }
+
+        .peer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .peer-box {
+            display: block;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--cit-red);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+        }
+
+        .peer-box:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-card);
+        }
+
+        .peer-box-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-heading);
+        }
+
+        .peer-box-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .peer-box-text {
+            font-size: 0.98rem;
+            color: var(--text-body);
+            line-height: 1.65;
+            margin-bottom: 1rem;
+        }
+
+        /* Dev Areas Box */
+        .dev-box {
+            background: #FFFBEB;
+            border: 1px solid #FDE68A;
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            margin-top: 2.5rem;
+        }
+
+        .dev-box-title {
+            color: #B45309;
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dev-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .dev-card {
+            background: #FFFFFF;
+            border: 1px solid #FCD34D;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+        }
+
+        .dev-card-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #92400E;
+            margin-bottom: 0.3rem;
+        }
+
+        .dev-card-desc {
+            font-size: 0.85rem;
+            color: #78350F;
+            margin-bottom: 0.5rem;
+        }
+
+        .dev-card-action {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--cit-teal-dark);
+            background: var(--cit-teal-light);
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-sm);
+            display: inline-block;
+        }
+
+        /* ==========================================
+           HARD & SOFT SKILLS SECTION (APENAS TÓPICOS)
+           ========================================== */
+        .skills-section {
+            padding: 5rem 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skills-topics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .skill-group-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+        }
+
+        .skill-group-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-heading);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--cit-red);
+        }
+
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: var(--text-body);
+        }
+
+        .topic-bullet {
+            color: var(--cit-red);
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        /* ==========================================
+           CERTIFICATES SECTION
+           ========================================== */
+        .cert-section {
+            padding: 5rem 0;
+        }
+
+        .course-tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .course-tab-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.6rem 1.25rem;
+            border-radius: var(--radius-md);
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .course-tab-btn.active,
+        .course-tab-btn:hover {
+            background: var(--cit-red-light);
+            border-color: var(--cit-red);
+            color: var(--cit-red);
+        }
+
+        .course-tab-content {
+            display: none;
+        }
+
+        .course-tab-content.active {
+            display: block;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-2px);
+        }
+
+        .course-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.85rem;
+        }
+
+        .cert-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--cit-teal-dark);
+            background: var(--cit-teal-light);
+            padding: 0.2rem 0.65rem;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+        }
+
+        .course-status-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #15803D;
+            background: #DCFCE7;
+            padding: 0.2rem 0.55rem;
+            border-radius: var(--radius-full);
+        }
+
+        .cert-name {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-heading);
+            line-height: 1.35;
+        }
+
+        .cert-desc,
+        .cert-code {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .cert-code code {
+            font-family: var(--font-code);
+            background: var(--bg-subtle);
+            padding: 0.1rem 0.35rem;
+            border-radius: var(--radius-sm);
+            color: var(--text-body);
+        }
+
+        .course-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+            gap: 0.5rem;
+        }
+
+        .course-platform {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .course-btn {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--cit-red);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: var(--transition);
+        }
+
+        .course-btn:hover {
+            color: var(--cit-red-dark);
+            text-decoration: underline;
+        }
+
+        /* ==========================================
+           FOOTER & CONTACT
+           ========================================== */
+        .footer {
+            padding: 4rem 0 2.5rem 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-brand {
+            font-family: var(--font-main);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                max-width: 400px;
+            }
+
+            .stats-summary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-topics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .stats-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="brand-logo">
+                <div class="brand-badge">
+                    <span class="red">CI</span><span class="teal">&amp;T</span>
+                </div>
+                <span style="margin-left: 0.5rem; font-weight: 700;">Lucas Debeterco</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home" class="nav-link">Sobre</a>
+                <a href="#experiencia" class="nav-link">Experiência</a>
+                <a href="#tecnologias" class="nav-link">Tecnologias</a>
+                <a href="#journey" class="nav-link">Avaliações Journey</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#certificados" class="nav-link">Certificados</a>
+            </nav>
+
+            <a href="mailto:lucas.debeterco@cit.com" class="btn btn-cit"
+                style="padding: 0.5rem 1.1rem; font-size: 0.85rem;">Fale Comigo</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (RESUMO SOBRE MIM) -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+
+                <div class="hero-main">
+                    <div class="hero-company-tag">
+                        <span>🏢 Senior Software Engineer @ CI&T</span>
+                    </div>
+
+                    <h1 class="hero-title">Lucas Debeterco</h1>
+
+                    <p class="hero-subtitle">
+                        Engenheiro de Software Sênior Javascript na CI&T. Experiência consolidada no desenvolvimento de
+                        aplicações escaláveis em Next.js, React e Nest (Node).
+                    </p>
+
+                    <div class="hero-ctas">
+                        <a href="#journey" class="btn btn-cit">Ver Avaliações do Time</a>
+                        <a href="#experiencia" class="btn btn-outline">Ver Trajetória Profissional</a>
+                    </div>
+
+                    <div class="stats-summary">
+                        <div class="stat-box">
+                            <div class="stat-number">+7 Anos</div>
+                            <div class="stat-text">Experiência em Dev</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">3.3 / 4.0</div>
+                            <div class="stat-text">Média Journey CI&T</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">Prudential</div>
+                            <div class="stat-text">Último Cliente Atendido</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card -->
+                <div class="hero-card">
+                    <img src="assets/perfil.jpg" alt="Lucas Debeterco" class="profile-avatar">
+                    <h3 class="profile-name">Lucas Wamser Rosa Debeterco</h3>
+                    <p class="profile-subtitle">Senior Software Engineer</p>
+
+                    <div class="profile-info-list">
+                        <div class="profile-info-item">
+                            <span>Cliente Recente:</span>
+                            <span>Prudential</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span>Especialidade:</span>
+                            <span>Ecossistema JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-social-links">
+                        <a href="https://www.linkedin.com/in/lucas-wamser-rosa-debeterco/" target="_blank"
+                            rel="noopener noreferrer" class="social-btn linkedin">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/lucasdebeterco" target="_blank" rel="noopener noreferrer"
+                            class="social-btn github">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://lucasdebeterco.dev/" target="_blank" rel="noopener noreferrer"
+                            class="social-btn portfolio">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                            Portfólio (lucasdebeterco.dev)
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section class="experience-section" id="experiencia">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Trajetória</span>
+                <h2 class="section-title">Experiências Profissionais</h2>
+                <p class="section-desc">Detalhes das empresas, clientes e contribuições técnicas em cada projeto.</p>
+            </div>
+
+            <div class="experience-list">
+
+                <!-- CI&T -->
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-role">Senior Software Engineer</h3>
+                            <div class="exp-company">CI&T • Projeto Cliente Prudential</div>
+                        </div>
+                        <span class="exp-period">2025 - Presente</span>
+                    </div>
+
+                    <div class="exp-location">📍 Remoto • Brasil</div>
+
+                    <ul class="exp-bullets">
+                        <li>Atuação como Desenvolvedor Sênior e liderança da arquitetura de projetos utilizando Next.js
+                            e React.js.</li>
+                        <li>Aplicação rigorosa de melhores práticas de arquitetura front-end para estabilidade e
+                            escalabilidade.</li>
+                        <li>Implementação do zero de autenticação SSO (Single Sign-On) com suporte a múltiplos
+                            provedores de identidade.</li>
+                        <li>Desenvolvimento e manutenção de automação de testes completos com Playwright e Jest.</li>
+                        <li>Colaboração direta com equipes multidisciplinares para definição e integração contínua de
+                            novas funcionalidades.</li>
+                        <li>Condução diária de code reviews, pair programming e orientação técnica constante para os
+                            desenvolvedores do time.</li>
+                    </ul>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">Next.js</span>
+                        <span class="exp-tag">React.js</span>
+                        <span class="exp-tag">TypeScript</span>
+                        <span class="exp-tag">SSO Auth</span>
+                        <span class="exp-tag">Playwright</span>
+                        <span class="exp-tag">Jest</span>
+                        <span class="exp-tag">Front-end Architecture</span>
+                    </div>
+                </div>
+
+                <!-- Magazord Commerce -->
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-role">Software Engineer</h3>
+                            <div class="exp-company">Magazord Commerce</div>
+                        </div>
+                        <span class="exp-period">2018 - 2025</span>
+                    </div>
+
+                    <div class="exp-location">📍 Rio do Sul, SC, Brasil • Híbrido</div>
+
+                    <ul class="exp-bullets">
+                        <li>Contribuição em sistemas de e-commerce atendendo milhões de usuários (consumidores e
+                            lojistas).</li>
+                        <li>Construção e arquitetura de projetos do zero utilizando Next.js, React.js, Nest, Node e
+                            TypeScript.</li>
+                        <li>Decomposição de arquitetura monolítica para micro-frontends ágeis e modulares.</li>
+                        <li>Esteiras de CI/CD utilizando AWS Amplify.</li>
+                        <li>Apoio contínuo com pair programming, code reviews e mentoria a novos desenvolvedores do
+                            time.</li>
+                        <li>Colaboração ativa com equipes de QA e Back-end para criação de APIs do zero.</li>
+                        <li>Domínio de conceitos de renderização web moderna (SSR, SPA e SSG) e otimização SEO.</li>
+                        <li>Desenvolvimento de Design System corporativo utilizando Storybook.</li>
+                        <li>Automação de testes com Cypress e Vitest, metodologia Scrum e Git Flow.</li>
+                    </ul>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">React.js</span>
+                        <span class="exp-tag">Next.js</span>
+                        <span class="exp-tag">Nest.js</span>
+                        <span class="exp-tag">Node</span>
+                        <span class="exp-tag">TypeScript</span>
+                        <span class="exp-tag">Micro-frontends</span>
+                        <span class="exp-tag">Storybook</span>
+                        <span class="exp-tag">AWS Amplify</span>
+                        <span class="exp-tag">Cypress</span>
+                        <span class="exp-tag">Vitest</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGIES SECTION -->
+    <section class="tech-section" id="tecnologias">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Conhecimentos</span>
+                <h2 class="section-title">Tecnologias Dominadas</h2>
+                <p class="section-desc">Divisão das principais tecnologias e ferramentas utilizadas em projetos.</p>
+            </div>
+
+            <div class="tech-categories-grid">
+
+                <div class="tech-cat-card">
+                    <h3 class="tech-cat-title">🤖 AI</h3>
+                    <div class="tech-tag-list">
+                        <span class="tech-badge">Claude</span>
+                        <span class="tech-badge">Agentes AI</span>
+                        <span class="tech-badge">BMAD</span>
+                        <span class="tech-badge">Prompt Engineering</span>
+                        <span class="tech-badge">GenAI Tools</span>
+                        <span class="tech-badge">LLM Integration</span>
+                        <span class="tech-badge">CI&amp;T /FLOW</span>
+                        <span class="tech-badge">GitHub Copilot</span>
+                        <span class="tech-badge">AI-Driven Dev</span>
+                    </div>
+                </div>
+
+                <div class="tech-cat-card">
+                    <h3 class="tech-cat-title">💻 Front-end</h3>
+                    <div class="tech-tag-list">
+                        <span class="tech-badge">React.js</span>
+                        <span class="tech-badge">Next.js</span>
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">Zustand</span>
+                        <span class="tech-badge">Context API</span>
+                        <span class="tech-badge">Redux</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">Styled-components</span>
+                        <span class="tech-badge">SASS / CSS3</span>
+                        <span class="tech-badge">Vite</span>
+                        <span class="tech-badge">JQuery</span>
+                        <span class="tech-badge">Twig Template</span>
+                    </div>
+                </div>
+
+                <div class="tech-cat-card">
+                    <h3 class="tech-cat-title">⚙️ Back-end & Banco de Dados</h3>
+                    <div class="tech-tag-list">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Nest.js</span>
+                        <span class="tech-badge">Express.js</span>
+                        <span class="tech-badge">Prisma ORM</span>
+                        <span class="tech-badge">API RESTful</span>
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="tech-cat-card">
+                    <h3 class="tech-cat-title">🛠️ Testes, Cloud & Ferramentas</h3>
+                    <div class="tech-tag-list">
+                        <span class="tech-badge">Playwright</span>
+                        <span class="tech-badge">Cypress</span>
+                        <span class="tech-badge">Vitest</span>
+                        <span class="tech-badge">Jest</span>
+                        <span class="tech-badge">ESLint</span>
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">GitHub Actions</span>
+                        <span class="tech-badge">Git Flow</span>
+                        <span class="tech-badge">Jira / Agile</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY EVALUATIONS SECTION -->
+    <section class="journey-section" id="journey">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Avaliações Internas CI&T</span>
+                <h2 class="section-title">Resultados no Processo Journey</h2>
+                <p class="section-desc">Histórico completo de notas e comentários de pares e liderança do último ciclo
+                    de avaliação.</p>
+            </div>
+
+            <!-- Score Table Card -->
+            <div class="journey-score-table-card">
+                <div class="journey-table-header">
+                    <div>
+                        <h3>Histórico de Avaliações por Pilar</h3>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Ciclo Dezembro 2025 • Início:
+                            26/12/2025 • Fim: 02/02/2026</p>
+                    </div>
+                    <span class="cycle-tag">Cycle Dec 2025</span>
+                </div>
+
+                <table class="score-table">
+                    <thead>
+                        <tr>
+                            <th>Avaliador</th>
+                            <th>Persona</th>
+                            <th>ESG</th>
+                            <th>People</th>
+                            <th>Client</th>
+                            <th>Growth</th>
+                            <th>Operational Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Liderança</td>
+                            <td>—</td>
+                            <td>2.0</td>
+                            <td>3.0</td>
+                            <td>3.0</td>
+                            <td>2.0</td>
+                            <td>3.0</td>
+                        </tr>
+                        <tr>
+                            <td>Média Peers &amp; Guests</td>
+                            <td>—</td>
+                            <td>3.3</td>
+                            <td>3.2</td>
+                            <td>3.0</td>
+                            <td>3.2</td>
+                            <td>3.2</td>
+                        </tr>
+                        <tr>
+                            <td>Autoavaliação (Self)</td>
+                            <td>—</td>
+                            <td>3.0</td>
+                            <td>3.0</td>
+                            <td>4.0</td>
+                            <td>4.0</td>
+                            <td>4.0</td>
+                        </tr>
+                        <tr style="background: var(--bg-subtle);">
+                            <td class="score-highlight">Média Final</td>
+                            <td>—</td>
+                            <td class="score-highlight">3.0</td>
+                            <td class="score-highlight">3.1</td>
+                            <td class="score-highlight">3.1</td>
+                            <td class="score-highlight">3.1</td>
+                            <td class="score-highlight">3.3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Lista Contínua de Avaliações -->
+            <div class="peer-list">
+
+                <!-- Liderança -->
+                <div class="peer-box" id="peer-lideranca">
+                    <h4 class="peer-box-title">👑 Avaliação da Liderança</h4>
+                    <div class="peer-box-meta">Fase de crise do projeto Prudential e entregas</div>
+                    <p class="peer-box-text">
+                        "Conhecimento técnico, senso de urgência, boa comunicação, transparência. Durante a fase de
+                        crise do
+                        projeto, apoiou na rápida resolução dos problemas, apoiando a Front PL com os direcionamentos e
+                        realizando entregas consistentes."
+                    </p>
+                </div>
+
+                <!-- Peer 2 -->
+                <div class="peer-box" id="peer-peer2" style="border-left-color: var(--cit-teal-dark);">
+                    <h4 class="peer-box-title">⭐ Peer &amp; Guest 2 (Destaque)</h4>
+                    <div class="peer-box-meta">Par direto de Pair Programming &amp; Integrações de Portal</div>
+                    <p class="peer-box-text">
+                        "Trabalhei ativamente com Lucas na parte de integrações no portal, desde a parte de indicadores
+                        até
+                        incentivos. Foi um prazer enorme fazer pair programming com ele, o cara é fera. Posso dizer com
+                        segurança que Lucas é um profissional muito valioso, possui uma capacidade de hard skills que
+                        superam um Sênior por sua visão muito forte de arquitetura e decisões técnicas. Possui Soft
+                        Skills
+                        muito bem desenvolvidas e está pronto para lidar com questões de liderança. Um ponto forte que
+                        gostaria de acrescentar que Lucas em diversos momentos demonstrou é de seu esforço descomunal e
+                        extremamente difícil de se encontrar no mercado de trabalho... Teve momentos que ficamos até
+                        altas
+                        horas trabalhando para lidar com situações extremamente delicadas de entrega no projeto e depois
+                        que
+                        eu não precisei mais fazer essas horas extras, Lucas continou fazendo. Ele não só atende as
+                        expectativas do cliente e da CI&T como supera e muito."
+                    </p>
+                </div>
+
+                <!-- Peer 4 -->
+                <div class="peer-box" id="peer-peer4">
+                    <h4 class="peer-box-title">🤝 Peer &amp; Guest 4 (Co-Liderança)</h4>
+                    <div class="peer-box-meta">Co-Liderança Técnica Front-end</div>
+                    <p class="peer-box-text">
+                        "Lucas é uma pessoa de referência técnica para o time, sendo altamente capaz de resolver
+                        problemas,
+                        sugerir soluções e orientar o time. Assumiu a co-liderança técnica do front-end com excelente
+                        desenvoltura e executou não apenas suas tarefas com excelente qualidade como foi capaz de apoiar
+                        o
+                        time e as lideranças com consistência e evidências claras. Quando solicitado o apoio aos demais
+                        membros do time sempre se mostrou solícito e paciente, demonstrando também disponibilidade e
+                        foco
+                        quando necessário para a iniciativa."
+                    </p>
+                </div>
+
+                <!-- Peer 3 -->
+                <div class="peer-box" id="peer-peer3">
+                    <h4 class="peer-box-title">⚡ Peer &amp; Guest 3 (Bugs Críticos)</h4>
+                    <div class="peer-box-meta">Resolução de Bugs Críticos</div>
+                    <p class="peer-box-text">
+                        "Durante o tempo em que trabalhei com o Lucas, percebi que ele tem um sólido conhecimento de
+                        Front
+                        End e boas práticas de desenvolvimento, é ágil para implementar tarefas, principalmente na
+                        resolução
+                        de bugs complexos. No time, ele também se dispunha para dar vazão na grande quantidade de bugs
+                        críticos que tínhamos na fila e também se mostrava proativo fazendo horas extras durante a
+                        semana e
+                        no fim de semana também."
+                    </p>
+                </div>
+
+                <!-- Peer 1 -->
+                <div class="peer-box" id="peer-peer1">
+                    <h4 class="peer-box-title">🎯 Peer &amp; Guest 1</h4>
+                    <div class="peer-box-meta">Comunicação e Liderança</div>
+                    <p class="peer-box-text">
+                        "Comunicação, Liderança, Solução de Problemas. Recomendação: Continuar com o desenvolvimento
+                        para
+                        Liderança pois já vem desempenhando um papel importante com as responsabilidades."
+                    </p>
+                </div>
+
+                <!-- Peer 5 -->
+                <div class="peer-box" id="peer-peer5">
+                    <h4 class="peer-box-title">💡 Peer &amp; Guest 5</h4>
+                    <div class="peer-box-meta">Visão de Escopo</div>
+                    <p class="peer-box-text">
+                        "Lucas tem muito conhecimento técnico e ajuda bastante os times que passa, tem boa visão de
+                        escopo
+                        de projeto."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Development Areas (Plano de Ação) -->
+            <div class="dev-box">
+                <h3 class="dev-box-title">🎯 Áreas de Desenvolvimento &amp; Plano de Evolução</h3>
+                <p style="font-size: 0.9rem; color: #78350F; margin-bottom: 1rem;">
+                    Resumo dos pontos de melhoria indicados na avaliação do Journey:
+                </p>
+
+                <div class="dev-list">
+                    <div class="dev-card">
+                        <div class="dev-card-title">Tech Talks &amp; Troca de Conhecimento</div>
+                        <div class="dev-card-desc">Organizar encontros técnicos para compartilhamento de boas práticas e
+                            uso de ferramentas como o Flow.</div>
+                        <span class="dev-card-action">⚡ Ação: Planejamento de sessões técnicas com o time</span>
+                    </div>
+
+                    <div class="dev-card">
+                        <div class="dev-card-title">Resultados das Soluções</div>
+                        <div class="dev-card-desc">Estruturar e apresentar os resultados de arquitetura diretamente para
+                            clientes e liderança.</div>
+                        <span class="dev-card-action">⚡ Ação: Apresentação de evoluções técnicas nas plannings</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HARD & SOFT SKILLS SECTION (APENAS TÓPICOS DE TEXTO) -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Competências</span>
+                <h2 class="section-title">Hard Skills &amp; Soft Skills</h2>
+                <p class="section-desc">Habilidades técnicas e comportamentais observadas na prática e validadas pela
+                    equipe.</p>
+            </div>
+
+            <div class="skills-topics-grid">
+
+                <!-- Hard Skills -->
+                <div class="skill-group-card">
+                    <h3 class="skill-group-title">💻 Hard Skills</h3>
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Inteligência Artificial &amp; Claude AI (Uso Diário):</strong> Utilização
+                                prática diária de Claude AI, agentes e ferramentas de GenAI para aceleração de código,
+                                arquitetura e produtividade.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Arquitetura Front-end Avançada:</strong> Estruturação de projetos em Next.js e
+                                React com padronização e escalabilidade.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Desenvolvimento Back-end &amp; Banco de Dados:</strong> Construção de APIs e
+                                aplicações utilizando NestJS, Node.js, TypeScript e bancos de dados PostgreSQL.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Resolução de Bugs Críticos:</strong> Agilidade e precisão no diagnóstico e
+                                correção de problemas complexos.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Demais itens como:</strong> Autenticação SSO (Single Sign-On com múltiplos provedores), Design Systems (Storybook), SEO, Automação de Testes (Playwright, Cypress, Jest, Vitest), Micro-frontends e Migração de Monolitos e muito mais.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-group-card">
+                    <h3 class="skill-group-title">🧠 Soft Skills</h3>
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Resiliência e Senso de Urgência:</strong> Alta performance e foco sob pressão
+                                em momentos de crise do projeto.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Liderança Técnica Co-ativa:</strong> Capacidade de orientar o time, direcionar
+                                decisões de arquitetura e apoiar lideranças.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Mentoria e Pair Programming:</strong> Solícito e paciente na orientação de
+                                desenvolvedores e onboarding de novos membros.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Comunicação Transparente:</strong> Clareza no alinhamento de escopo,
+                                impedimentos e entregas com o time.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Comprometimento Elevado:</strong> Dedicação além das expectativas para
+                                assegurar a conclusão de entregas críticas.</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-bullet">•</span>
+                            <div><strong>Visão de Escopo &amp; Solução de Problemas:</strong> Capacidade de entender o
+                                contexto do cliente e propor alternativas eficientes.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS & COURSES SECTION -->
+    <section class="cert-section" id="certificados">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Aprendizado &amp; Capacitação</span>
+                <h2 class="section-title">Cursos &amp; Certificações</h2>
+                <p class="section-desc">Acompanhamento dos cursos concluídos na CI&T e capacitações pessoais.</p>
+            </div>
+
+            <!-- Tabs de Navegação de Cursos -->
+            <div class="course-tabs-nav">
+                <button class="course-tab-btn active" onclick="switchCourseTab('cit')">🏢 Cursos CI&amp;T</button>
+                <button class="course-tab-btn" onclick="switchCourseTab('pessoais')">🎓 Cursos Pessoais</button>
+            </div>
+
+            <!-- Conteúdo da Tab CI&T -->
+            <div class="course-tab-content active" id="tab-cit-courses">
+                <div id="cit-courses-list" class="cert-grid">
+                    <!-- Preenchido dinamicamente via courses.js -->
+                </div>
+            </div>
+
+            <!-- Conteúdo da Tab Pessoais -->
+            <div class="course-tab-content" id="tab-personal-courses">
+                <div id="personal-courses-list" class="cert-grid">
+                    <!-- Preenchido dinamicamente via courses.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & CONTACT -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">
+                        <span style="color: var(--cit-red);">CI</span><span
+                            style="color: var(--cit-teal);">&amp;T</span> Lucas Debeterco
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.4rem;">
+                        Senior Software Engineer • Disponível para novos projetos e clientes CI&T.
+                    </p>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                    <a href="mailto:lucas.debeterco@cit.com" class="btn btn-cit">Contatar via E-mail</a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                © 2026 Lucas Debeterco. Desenvolvido para apresentação interna e externa CI&T.
+            </div>
+        </div>
+    </footer>
+
+    <!-- COURSES DATA AND INTERACTIVE SCRIPT -->
+    <script src="courses.js"></script>
+    <script>
+        // Tab Handler para a seção de Cursos (CI&T vs Pessoais)
+        function switchCourseTab(tabName) {
+            const buttons = document.querySelectorAll('.course-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            const contents = document.querySelectorAll('.course-tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const selectedContent = document.getElementById(`tab-${tabName}-courses`);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+        }
+
+        // Renderizador Dinâmico dos Cursos a partir do arquivo courses.js
+        function renderCourses() {
+            const citContainer = document.getElementById('cit-courses-list');
+            const personalContainer = document.getElementById('personal-courses-list');
+
+            if (citContainer && typeof citCourses !== 'undefined') {
+                citContainer.innerHTML = citCourses.map(course => `
+                    <div class="cert-card">
+                        <div>
+                            <div class="course-card-header">
+                                <span class="cert-tag">${course.category}</span>
+                                <span class="course-status-tag">✓ ${course.statusText}</span>
+                            </div>
+                            <h3 class="cert-name">${course.title}</h3>
+                            <div class="cert-code">Código: <code>${course.code}</code></div>
+                        </div>
+                        <div class="course-card-footer">
+                            <span class="course-platform">${course.platform}</span>
+                            <a href="${course.url}" target="_blank" rel="noopener noreferrer" class="course-btn">
+                                Ver Detalhes &rarr;
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            if (personalContainer && typeof personalCourses !== 'undefined') {
+                if (personalCourses.length === 0) {
+                    personalContainer.innerHTML = `
+                        <div class="cert-card" style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem; border-style: dashed; background: var(--bg-main);">
+                            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📚</div>
+                            <h3 style="font-size: 1.15rem; color: var(--text-heading); margin-bottom: 0.5rem;">Nenhum curso pessoal cadastrado ainda</h3>
+                            <p style="color: var(--text-muted); font-size: 0.92rem; max-width: 500px; margin: 0 auto;">
+                                Espaço reservado para adição de novos cursos pessoais e certificações independentes. Basta adicionar novos objetos no array <code>personalCourses</code> no arquivo <code>courses.js</code>.
+                            </p>
+                        </div>
+                    `;
+                } else {
+                    personalContainer.innerHTML = personalCourses.map(course => `
+                        <div class="cert-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="cert-tag">${course.category}</span>
+                                    <span class="course-status-tag">✓ ${course.statusText}</span>
+                                </div>
+                                <h3 class="cert-name">${course.title}</h3>
+                                <div class="cert-code">Código: <code>${course.code}</code></div>
+                            </div>
+                            <div class="course-card-footer">
+                                <span class="course-platform">${course.platform}</span>
+                                <a href="${course.url}" target="_blank" rel="noopener noreferrer" class="course-btn">
+                                    Ver Detalhes &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCourses();
+        });
+    </script>
+</body>
+
 </html>
