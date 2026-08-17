@@ -1655,10 +1655,10 @@
 
             <!-- Tabs de Navegação e Filtros de Cursos -->
             <div class="course-tabs-nav">
-                <button class="course-tab-btn active" onclick="switchCourseTab(event, 'all')">🌟 Todos os Cursos
-                    (28)</button>
-                <button class="course-tab-btn" onclick="switchCourseTab(event, 'cit')">🏢 Cursos CI&amp;T (12)</button>
-                <button class="course-tab-btn" onclick="switchCourseTab(event, 'pessoais')">🎓 Cursos Pessoais
+                <button id="btn-tab-all" class="course-tab-btn active" onclick="switchCourseTab(event, 'all')">🌟 Todos os Cursos
+                    (45)</button>
+                <button id="btn-tab-cit" class="course-tab-btn" onclick="switchCourseTab(event, 'cit')">🏢 Cursos CI&amp;T (29)</button>
+                <button id="btn-tab-pessoais" class="course-tab-btn" onclick="switchCourseTab(event, 'pessoais')">🎓 Cursos Pessoais
                     (16)</button>
             </div>
 
@@ -1667,8 +1667,8 @@
                 <h3
                     style="font-size: 1.15rem; color: var(--text-heading); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
                     <span>🏢 Cursos &amp; Capacitações CI&amp;T</span>
-                    <span
-                        style="font-size: 0.78rem; font-weight: 700; background: var(--cit-red-light); color: var(--cit-red); padding: 0.2rem 0.65rem; border-radius: var(--radius-full);">12
+                    <span id="cit-course-count-badge"
+                        style="font-size: 0.78rem; font-weight: 700; background: var(--cit-red-light); color: var(--cit-red); padding: 0.2rem 0.65rem; border-radius: var(--radius-full);">29
                         Cursos</span>
                 </h3>
                 <div id="cit-courses-list" class="cert-grid">
@@ -1750,6 +1750,20 @@
         function renderCourses() {
             const citContainer = document.getElementById('cit-courses-list');
             const personalContainer = document.getElementById('personal-courses-list');
+
+            const citCount = typeof citCourses !== 'undefined' ? citCourses.length : 0;
+            const personalCount = typeof personalCourses !== 'undefined' ? personalCourses.length : 0;
+            const totalCount = citCount + personalCount;
+
+            const btnAll = document.getElementById('btn-tab-all');
+            const btnCit = document.getElementById('btn-tab-cit');
+            const btnPessoais = document.getElementById('btn-tab-pessoais');
+            const citBadge = document.getElementById('cit-course-count-badge');
+
+            if (btnAll) btnAll.textContent = `🌟 Todos os Cursos (${totalCount})`;
+            if (btnCit) btnCit.textContent = `🏢 Cursos CI&T (${citCount})`;
+            if (btnPessoais) btnPessoais.textContent = `🎓 Cursos Pessoais (${personalCount})`;
+            if (citBadge) citBadge.textContent = `${citCount} Cursos`;
 
             if (citContainer && typeof citCourses !== 'undefined') {
                 citContainer.innerHTML = citCourses.map(course => `

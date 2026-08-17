@@ -5,17 +5,129 @@
 
 const citCourses = [
     {
-        id: "genai-fasttrack",
-        title: "Gen AI Engineering - FAST TRACK",
+        id: "certgenaiengineering",
+        title: "[Certification] Gen AI Engineering",
         category: "AI Engineering",
-        url: "https://www.linkedin.com/learning/paths/ci-t-gen-ai-engineering-fast-track?u=451056106",
-        platform: "LinkedIn Learning • Rota CI&T"
+        url: "https://university.ciandt.com/plus/my/training/477/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certgenaiengfastrack",
+        title: "[Certification] Gen AI Engineering - Fast Track",
+        category: "AI Engineering",
+        url: "https://university.ciandt.com/plus/my/training/524/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certaifluencyanthrop",
+        title: "[Certification] AI Fluency: Framework & Foundations - Anthropic",
+        category: "Anthropic & Claude",
+        url: "https://university.ciandt.com/plus/my/training/521/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certclaudecode101",
+        title: "[Certification] Claude 101 - Anthropic",
+        category: "Anthropic & Claude",
+        url: "https://university.ciandt.com/plus/my/training/498/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certllmprompt",
+        title: "[Certification Exam] 1. Fundamentals of LLMs and Prompt Engineering",
+        category: "AI Engineering",
+        url: "https://university.ciandt.com/plus/my/training/467/units/continue",
+        platform: "CI&T University"
     },
     {
         id: "cert-devaitools",
         title: "[Certification Exam] 2. Practical Development with AI Tools",
         category: "AI & Automation",
         url: "https://university.ciandt.com/plus/my/training/470/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certaicodeautomation",
+        title: "[Certification Exam] 3. AI Agents and Code Automation",
+        category: "AI & Automation",
+        url: "https://university.ciandt.com/plus/my/training/471/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certmultiagentcoll",
+        title: "[Certification Exam] 4. Multi-Agent Systems and Collaboration",
+        category: "AI & Automation",
+        url: "https://university.ciandt.com/plus/my/training/472/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certmemoryevalagents",
+        title: "[Certification Exam] 5. Evaluation and Memory in AI Agents",
+        category: "AI & Automation",
+        url: "https://university.ciandt.com/plus/my/training/473/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certadvragdspy",
+        title: "[Certification Exam] 6. Advanced RAG and DSPy Applications",
+        category: "AI Engineering",
+        url: "https://university.ciandt.com/plus/my/training/474/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certadvllmtraining",
+        title: "[Certification Exam] 7. Advanced LLM Training Methods",
+        category: "AI Engineering",
+        url: "https://university.ciandt.com/plus/my/training/475/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certagenticai",
+        title: "[Certification Exam] 8. Agentic AI: Architectures and Applications",
+        category: "AI & Automation",
+        url: "https://university.ciandt.com/plus/my/training/476/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certbuildclaudeapi",
+        title: "[Certification] Building with the Claude API - Anthropic",
+        category: "Anthropic & Claude",
+        url: "https://university.ciandt.com/plus/my/training/483/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certclaudecodeaction",
+        title: "[Certification] Claude Code in Action - Anthropic",
+        category: "Anthropic & Claude",
+        url: "https://university.ciandt.com/plus/my/training/484/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certintroagentskill",
+        title: "[Certification] Introduction to agent skills - Anthropic",
+        category: "Anthropic & Claude",
+        url: "https://university.ciandt.com/plus/my/training/482/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certintromcp",
+        title: "[Certification] Introduction to Model Context Protocol - Anthropic",
+        category: "Anthropic & Claude",
+        url: "https://university.ciandt.com/plus/my/training/480/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "certclaudecodemcpadv",
+        title: "[Certification] Model Context Protocol: Advanced Topics - Anthropic",
+        category: "Anthropic & Claude",
+        url: "https://university.ciandt.com/plus/my/training/499/units/continue",
+        platform: "CI&T University"
+    },
+    {
+        id: "agenticsddbmac",
+        title: "Agentic Software Development - SDD & BMAD",
+        category: "AI & Automation",
+        url: "https://university.ciandt.com/plus/my/training/479/units/continue",
         platform: "CI&T University"
     },
     {
